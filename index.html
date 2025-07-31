@@ -13,19 +13,23 @@
       font-family: Arial, sans-serif;
     }
 
-    body {
+    #main {
       display: flex;
       height: 100vh;
+      width: 100vw;
       overflow: hidden;
     }
 
     #sidebar {
       width: 300px;
+      min-width: 200px;
+      max-width: 600px;
       padding: 10px;
       background: white;
       overflow-y: auto;
+      resize: horizontal;
+      overflow: auto;
       box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-      flex-shrink: 0;
     }
 
     #map {
@@ -43,17 +47,19 @@
   </style>
 </head>
 <body>
-  <div id="sidebar">
-    <label for="courseSelect"><strong>Select course:</strong></label>
-    <select id="courseSelect"></select>
+  <div id="main">
+    <div id="sidebar">
+      <label for="courseSelect"><strong>Select course:</strong></label>
+      <select id="courseSelect"></select>
 
-    <h3>Toggle Layers</h3>
-    <div id="layerControls"></div>
-    <hr />
-    <h3>Layer Areas</h3>
-    <div id="layerAreas"></div>
+      <h3>Toggle Layers</h3>
+      <div id="layerControls"></div>
+      <hr />
+      <h3>Layer Areas</h3>
+      <div id="layerAreas"></div>
+    </div>
+    <div id="map"></div>
   </div>
-  <div id="map"></div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
   <script>
@@ -115,7 +121,6 @@
         }
 
         function updateSidebar(selectedCourse) {
-          // Remove all previous layers
           Object.values(courseLayers).forEach(layerMap => {
             Object.values(layerMap).forEach(group => {
               leafletMap.removeLayer(group);
@@ -151,7 +156,7 @@
             checkboxContainer.appendChild(label);
             controlContainer.appendChild(checkboxContainer);
 
-            // Add group to map and extend bounds
+            // Add to map and extend bounds
             layerGroup.addTo(leafletMap);
             layerGroup.eachLayer(layer => {
               if (layer.getBounds) {
@@ -177,6 +182,13 @@
         console.error("Error loading or parsing GeoJSON:", error);
         alert("Failed to load GeoJSON. Check console for details.");
       });
+
+    // ResizeObserver to detect sidebar width change and resize map
+    const sidebar = document.getElementById('sidebar');
+    const resizeObserver = new ResizeObserver(() => {
+      leafletMap.invalidateSize();
+    });
+    resizeObserver.observe(sidebar);
   </script>
 </body>
 </html>
