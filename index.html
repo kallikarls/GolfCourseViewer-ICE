@@ -95,7 +95,7 @@
       .then(data => {
         const allFeatures = L.geoJSON(data, {
           onEachFeature: function (feature, layer) {
-            const course = feature.properties.course || 'unknown';
+            const course = feature.properties.courseName || feature.properties.course || 'unknown';
             const layerName = feature.properties.layer || 'unknown';
             const area = parseFloat(feature.properties.AreaSqMeters || 0);
 
