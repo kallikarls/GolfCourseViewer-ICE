@@ -120,12 +120,14 @@
         const controlContainer = document.getElementById('layerControls');
         const areaContainer = document.getElementById('layerAreas');
 
-        Object.keys(courseLayers).forEach(course => {
-          const option = document.createElement('option');
-          option.value = course;
-          option.textContent = course;
-          courseSelect.appendChild(option);
-        });
+        Object.keys(courseLayers)
+          .sort((a, b) => a.localeCompare(b, 'is', { sensitivity: 'base' }))
+          .forEach(course => {
+            const option = document.createElement('option');
+            option.value = course;
+            option.textContent = course;
+            courseSelect.appendChild(option);
+          });
 
         courseSelect.addEventListener('change', () => {
           updateSidebar(courseSelect.value);
