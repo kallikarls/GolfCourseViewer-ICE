@@ -1,213 +1,242 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="is">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Golf Course Viewer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>
     html, body {
-      margin: 0;
-      padding: 0;
       height: 100%;
-      font-family: Arial, sans-serif;
+      margin: 0;
     }
-
-    #main {
-      display: flex;
-      height: 100vh;
-      width: 100vw;
-      overflow: hidden;
-    }
-
-    #sidebar {
-      width: 320px;
-      min-width: 240px;
-      max-width: 600px;
-      padding: 16px;
-      background: #f8f9fa;
-      resize: horizontal;
-      overflow: auto;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    }
-
     #map {
-      flex: 1;
+      height: 100%;
+      width: 100%;
     }
-
-    .form-check {
-      margin-bottom: 6px;
+    #sidebar {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 360px;
+      height: 100%;
+      background-color: white;
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      transition: right 0.3s ease;
     }
-
+    #sidebar.collapsed {
+      right: -360px;
+    }
+    #toggleSidebarBtn {
+      position: absolute;
+      top: 10px;
+      right: 370px;
+      z-index: 1100;
+    }
+    #toggleSidebarBtn.collapsed {
+      right: 10px;
+    }
+    #searchSection, #layerToggleSection, #infoPanelSection {
+      padding: 1rem;
+      overflow-y: auto;
+    }
+    #searchSection {
+      max-height: 40%;
+      border-bottom: 1px solid #ddd;
+    }
+    #layerToggleSection {
+      max-height: 30%;
+      border-bottom: 1px solid #ddd;
+    }
+    #infoPanelSection {
+      flex-grow: 1;
+      overflow-y: auto;
+    }
+    thead th {
+      position: sticky;
+      top: 0;
+      background: white;
+    }
     .layer-entry {
-      padding: 6px 0;
-      font-size: 0.95rem;
-    }
-
-    hr {
-      margin: 1rem 0;
+      padding: 4px 0;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-  <div id="main">
-    <div id="sidebar">
-      <h5 class="mb-3">Golf Course Viewer</h5>
+  <div id="map"></div>
 
-      <div class="mb-3">
-        <label for="courseSelect" class="form-label"><strong>Select course:</strong></label>
-        <select id="courseSelect" class="form-select"></select>
-      </div>
+  <!-- Toggle Sidebar Button -->
+  <button id="toggleSidebarBtn" class="btn btn-sm btn-outline-secondary">Hide</button>
 
-      <div class="mb-3">
-        <h6>Toggle Layers</h6>
-        <div id="layerControls"></div>
-      </div>
-
-      <hr />
-
-      <div>
-        <h6>Layer Areas</h6>
-        <div id="layerAreas" class="list-group list-group-flush"></div>
-      </div>
+  <!-- Sidebar Panel -->
+  <div id="sidebar">
+    <!-- Course Selection (Top) -->
+    <div id="searchSection">
+      <input
+        id="searchInput"
+        type="text"
+        class="form-control mb-3"
+        placeholder="Leitaðu að velli eða klúbbi..."
+      />
+      <table class="table table-bordered table-hover mb-0" id="courseTable">
+        <thead class="table-light">
+          <tr>
+            <th>Course</th>
+            <th>Club</th>
+          </tr>
+        </thead>
+        <tbody id="courseTableBody"></tbody>
+      </table>
     </div>
 
-    <div id="map"></div>
+    <!-- Layer Toggles (Middle) -->
+    <div id="layerToggleSection">
+      <h6>Toggle Layers</h6>
+      <div id="layerToggles" class="form-check"></div>
+    </div>
+
+    <!-- Layer Info Summary (Bottom) -->
+    <div id="infoPanelSection">
+      <h6>Layer Areas</h6>
+      <div id="featureInfo" class="small text-muted">Veldu völl...</div>
+    </div>
   </div>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-    const leafletMap = L.map('map').setView([64.96, -18.65], 6);
+    let map = L.map("map").setView([64.9, -18.0], 6);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
+    let geoJsonLayer = null;
+    let courseList = [];
+    let currentFeatureGroup = null;
+    let layerGroups = {};
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(leafletMap);
-
-    const courseLayers = {};
-    const courseAreas = {};
-
-    fetch('FeatureCollection.geojson')
-      .then(response => {
-        if (!response.ok) throw new Error("Failed to load GeoJSON");
-        return response.json();
-      })
+    // Load and render course list
+    fetch("courseIndex.json")
+      .then(res => res.json())
       .then(data => {
-        const allFeatures = L.geoJSON(data, {
-          onEachFeature: function (feature, layer) {
-            const course = feature.properties.courseName || feature.properties.course || 'unknown';
-            const layerName = feature.properties.layer || 'unknown';
-            const area = parseFloat(feature.properties.AreaSqMeters || 0);
-
-            if (!courseLayers[course]) {
-              courseLayers[course] = {};
-              courseAreas[course] = {};
-            }
-
-            if (!courseLayers[course][layerName]) {
-              courseLayers[course][layerName] = L.layerGroup();
-              courseAreas[course][layerName] = 0;
-            }
-
-            courseAreas[course][layerName] += area;
-
-            const sublayer = L.geoJSON(feature);
-            sublayer.addTo(courseLayers[course][layerName]);
-          }
-        });
-
-        const courseSelect = document.getElementById('courseSelect');
-        const controlContainer = document.getElementById('layerControls');
-        const areaContainer = document.getElementById('layerAreas');
-
-        Object.keys(courseLayers)
-          .sort((a, b) => a.localeCompare(b, 'is', { sensitivity: 'base' }))
-          .forEach(course => {
-            const option = document.createElement('option');
-            option.value = course;
-            option.textContent = course;
-            courseSelect.appendChild(option);
-          });
-
-        courseSelect.addEventListener('change', () => {
-          updateSidebar(courseSelect.value);
-        });
-
-        if (courseSelect.options.length > 0) {
-          updateSidebar(courseSelect.options[0].value);
-        }
-
-        function updateSidebar(selectedCourse) {
-          Object.values(courseLayers).forEach(layerMap => {
-            Object.values(layerMap).forEach(group => {
-              leafletMap.removeLayer(group);
-            });
-          });
-
-          controlContainer.innerHTML = '';
-          areaContainer.innerHTML = '';
-          let bounds = L.latLngBounds();
-
-          for (const [layerName, layerGroup] of Object.entries(courseLayers[selectedCourse])) {
-            const checkbox = document.createElement('input');
-            checkbox.type = 'checkbox';
-            checkbox.checked = true;
-            checkbox.id = `${selectedCourse}-${layerName}`;
-            checkbox.className = 'form-check-input me-2';
-
-            checkbox.addEventListener('change', () => {
-              if (checkbox.checked) {
-                layerGroup.addTo(leafletMap);
-              } else {
-                leafletMap.removeLayer(layerGroup);
-              }
-              setTimeout(() => leafletMap.invalidateSize(), 100);
-            });
-
-            const label = document.createElement('label');
-            label.htmlFor = checkbox.id;
-            label.textContent = layerName;
-            label.className = 'form-check-label';
-
-            const wrapper = document.createElement('div');
-            wrapper.className = 'form-check';
-            wrapper.appendChild(checkbox);
-            wrapper.appendChild(label);
-            controlContainer.appendChild(wrapper);
-
-            // Add to map and extend bounds
-            layerGroup.addTo(leafletMap);
-            layerGroup.eachLayer(layer => {
-              if (layer.getBounds) {
-                bounds.extend(layer.getBounds());
-              }
-            });
-
-            const div = document.createElement('div');
-            div.className = 'list-group-item layer-entry';
-            div.textContent = `${layerName}: ${courseAreas[selectedCourse][layerName].toLocaleString(undefined, { maximumFractionDigits: 1 })} m²`;
-            areaContainer.appendChild(div);
-          }
-
-          if (bounds.isValid()) {
-            leafletMap.fitBounds(bounds);
-            setTimeout(() => leafletMap.invalidateSize(), 100);
-          } else {
-            console.warn("No valid bounds for selected course:", selectedCourse);
-          }
-        }
-      })
-      .catch(error => {
-        console.error("Error loading or parsing GeoJSON:", error);
-        alert("Failed to load GeoJSON. Check console for details.");
+        courseList = Object.entries(data).map(([courseName, clubName]) => ({
+          courseName,
+          clubName
+        }));
+        renderTable(courseList);
       });
 
-    // Sidebar resizing detection
-    const sidebar = document.getElementById('sidebar');
-    const resizeObserver = new ResizeObserver(() => {
-      leafletMap.invalidateSize();
+    function renderTable(data) {
+      const tbody = document.getElementById("courseTableBody");
+      tbody.innerHTML = "";
+      data.forEach(course => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `<td>${course.courseName}</td><td>${course.clubName}</td>`;
+        const fileName = `courses/${course.courseName}.geojson`;
+        tr.onclick = () => loadGeoJson(fileName);
+        tbody.appendChild(tr);
+      });
+    }
+
+    function loadGeoJson(path) {
+      if (geoJsonLayer) geoJsonLayer.remove();
+      if (currentFeatureGroup) currentFeatureGroup.clearLayers();
+      document.getElementById("layerToggles").innerHTML = "";
+      document.getElementById("featureInfo").innerText = "Veldu völl...";
+
+      fetch(path)
+        .then(res => res.json())
+        .then(data => {
+          currentFeatureGroup = L.featureGroup().addTo(map);
+          layerGroups = {};
+          const areaSummary = {};
+
+          data.features.forEach(feature => {
+            const layerType = feature.properties?.layer || "Other";
+            const area = parseFloat(feature.properties?.AreaSqMeters || 0);
+            if (!areaSummary[layerType]) areaSummary[layerType] = 0;
+            areaSummary[layerType] += area;
+
+            const layer = L.geoJSON(feature);
+            if (!layerGroups[layerType]) {
+              layerGroups[layerType] = L.layerGroup().addTo(map);
+              createLayerToggle(layerType);
+            }
+            layer.addTo(layerGroups[layerType]);
+            layer.addTo(currentFeatureGroup);
+          });
+
+          renderAreaSummary(areaSummary);
+
+          if (currentFeatureGroup.getBounds().isValid()) {
+            map.fitBounds(currentFeatureGroup.getBounds());
+          }
+        });
+    }
+
+    function createLayerToggle(layerType) {
+      const container = document.getElementById("layerToggles");
+      const id = `layerToggle_${layerType}`;
+
+      const div = document.createElement("div");
+      div.className = "form-check";
+
+      const checkbox = document.createElement("input");
+      checkbox.className = "form-check-input";
+      checkbox.type = "checkbox";
+      checkbox.id = id;
+      checkbox.checked = true;
+      checkbox.onchange = () => {
+        const group = layerGroups[layerType];
+        if (group) {
+          if (checkbox.checked) {
+            group.addTo(map);
+          } else {
+            group.remove();
+          }
+        }
+      };
+
+      const label = document.createElement("label");
+      label.className = "form-check-label";
+      label.htmlFor = id;
+      label.textContent = layerType;
+
+      div.appendChild(checkbox);
+      div.appendChild(label);
+      container.appendChild(div);
+    }
+
+    function renderAreaSummary(areaSummary) {
+      const infoPanel = document.getElementById("featureInfo");
+      infoPanel.innerHTML = Object.entries(areaSummary)
+        .map(([layer, area]) =>
+          `<div class="layer-entry">${layer}: ${area.toLocaleString(undefined, { maximumFractionDigits: 1 })} m²</div>`
+        )
+        .join("");
+    }
+
+    // Filter table
+    document.getElementById("searchInput").addEventListener("input", () => {
+      const filter = document.getElementById("searchInput").value.toLowerCase();
+      const filtered = courseList.filter(c =>
+        String(c.courseName || "").toLowerCase().includes(filter) ||
+        String(c.clubName || "").toLowerCase().includes(filter)
+      );
+      renderTable(filtered);
     });
-    resizeObserver.observe(sidebar);
+
+    // Sidebar toggle
+    const sidebar = document.getElementById("sidebar");
+    const toggleBtn = document.getElementById("toggleSidebarBtn");
+
+    toggleBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("collapsed");
+      toggleBtn.classList.toggle("collapsed");
+      toggleBtn.textContent = sidebar.classList.contains("collapsed") ? "Show" : "Hide";
+    });
   </script>
 </body>
 </html>
