@@ -19,7 +19,7 @@
     .course-panel {
       position: absolute;
       top: 1rem;
-      left: 1rem;
+      left: 4rem;
       width: 320px;
       max-height: 60px;
       overflow: hidden;
@@ -66,7 +66,7 @@
 
   <div class="course-panel" id="coursePanel">
     <button class="expand-btn" id="toggleBtn" onclick="toggleCoursePanel()">▼</button>
-    <input id="searchInput" type="text" class="form-control mb-2" placeholder="Leitaðu að velli eða klúbbi..." />
+    <input id="searchInput" type="text" class="form-control mb-2" placeholder="Course or club..." />
     <table class="table table-sm table-bordered">
       <thead class="table-light">
         <tr><th>Course</th><th>Club</th></tr>
@@ -95,34 +95,14 @@
 
     const courseLayers = {}, courseAreas = {}, courseInfo = [];
 
-    fetch('FeatureCollection.geojson')
+    let courseIndex = {};
+    fetch('courseIndex.json')
       .then(res => res.json())
-      .then(data => {
-        const allFeatures = L.geoJSON(data, {
-          onEachFeature: (feature, layer) => {
-            const course = feature.properties.course || 'unknown';
-            const layerName = feature.properties.layer || 'unknown';
-            const area = parseFloat(feature.properties.AreaSqMeters || 0);
-            const courseName = feature.properties.courseName || course;
-            const clubName = feature.properties.clubName || 'Unknown';
-
-            if (!courseLayers[course]) {
-              courseLayers[course] = {};
-              courseAreas[course] = {};
-              courseInfo.push({ course, courseName, clubName });
-            }
-
-            if (!courseLayers[course][layerName]) {
-              courseLayers[course][layerName] = L.layerGroup();
-              courseAreas[course][layerName] = 0;
-            }
-
-            courseAreas[course][layerName] += area;
-            const sublayer = L.geoJSON(feature);
-            sublayer.addTo(courseLayers[course][layerName]);
-          }
-        });
-
+      .then(index => {
+        courseIndex = index;
+        for (const courseName in courseIndex) {
+          courseInfo.push({ course: courseName, courseName, clubName: courseIndex[courseName] });
+        }
         populateCourseList();
       });
 
@@ -143,7 +123,7 @@
           const row = document.createElement('tr');
           row.innerHTML = `<td>${c.courseName}</td><td>${c.clubName}</td>`;
           row.style.cursor = 'pointer';
-          row.onclick = () => updateCourseView(c.course);
+          row.onclick = () => loadCourse(c.courseName);
           tbody.appendChild(row);
         });
       }
@@ -152,11 +132,37 @@
       renderList();
     }
 
-    function updateCourseView(courseKey) {
+    function loadCourse(courseName) {
       for (const layerMap of Object.values(courseLayers)) {
         for (const group of Object.values(layerMap)) leafletMap.removeLayer(group);
       }
+      courseLayers[courseName] = {};
+      courseAreas[courseName] = {};
 
+      fetch(`courses/${courseName}.geojson`)
+        .then(res => res.json())
+        .then(data => {
+          const bounds = L.latLngBounds();
+
+          data.features.forEach(feature => {
+            const layerName = feature.properties.layer || 'unknown';
+            const area = parseFloat(feature.properties.AreaSqMeters || 0);
+
+            if (!courseLayers[courseName][layerName]) {
+              courseLayers[courseName][layerName] = L.layerGroup();
+              courseAreas[courseName][layerName] = 0;
+            }
+            courseAreas[courseName][layerName] += area;
+
+            const sublayer = L.geoJSON(feature);
+            sublayer.addTo(courseLayers[courseName][layerName]);
+          });
+
+          updateCourseView(courseName);
+        });
+    }
+
+    function updateCourseView(courseKey) {
       const toggles = document.getElementById('layerToggles');
       const areas = document.getElementById('layerAreas');
       toggles.innerHTML = '';
@@ -187,7 +193,7 @@
         group.eachLayer(l => { if (l.getBounds) bounds.extend(l.getBounds()); });
 
         const areaEntry = document.createElement('div');
-        areaEntry.textContent = `${layerName}: ${courseAreas[courseKey][layerName].toLocaleString(undefined, {maximumFractionDigits: 1})} m²`;
+        areaEntry.textContent = `${layerName}: ${courseAreas[courseKey][layerName].toLocaleString(undefined, { maximumFractionDigits: 1 })} m²`;
         areas.appendChild(areaEntry);
       }
 
