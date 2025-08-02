@@ -21,13 +21,15 @@
       position: absolute;
       top: 1rem;
       left: 4rem;
-      width: 360px;
+      width: 460px;
       background: white;
       border-radius: 8px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
       z-index: 1000;
       transition: max-height 0.3s ease;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
     .course-panel.collapsed {
       max-height: 70px;
@@ -43,12 +45,11 @@
       z-index: 10;
     }
     .course-panel table {
-      margin-bottom: 0;
-      margin-left: 1rem;
-      margin-right: 1rem;
+      margin: 0 1rem;
+      width: calc(100% - 2rem);
     }
     .table-responsive {
-      max-height: 400px;
+      flex: 1;
       overflow-y: auto;
       padding-bottom: 1rem;
     }
@@ -106,175 +107,6 @@
   </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script>
-    const leafletMap = L.map('map').setView([64.96, -18.65], 6);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(leafletMap);
-
-    const courseLayers = {}, courseAreas = {}, courseInfo = [];
-    let currentSort = { column: null, asc: true };
-    let isExpanded = false;
-
-    let courseIndex = {};
-    fetch('courseIndex.json')
-      .then(res => res.json())
-      .then(index => {
-        courseIndex = index;
-        for (const courseName in courseIndex) {
-          courseInfo.push({ course: courseName, courseName, clubName: courseIndex[courseName] });
-        }
-        populateCourseList();
-      });
-
-    function populateCourseList() {
-      const tbody = document.getElementById('courseTableBody');
-      const input = document.getElementById('searchInput');
-
-      function renderList(filter = '') {
-        tbody.innerHTML = '';
-        const filtered = courseInfo.filter(c =>
-          c.courseName.toLowerCase().includes(filter.toLowerCase()) ||
-          c.clubName.toLowerCase().includes(filter.toLowerCase())
-        );
-
-        filtered.forEach(c => {
-          const row = document.createElement('tr');
-          row.innerHTML = `<td>${c.courseName}</td><td>${c.clubName}</td>`;
-          row.style.cursor = 'pointer';
-          row.onclick = () => {
-            input.value = `${c.courseName} – ${c.clubName}`;
-            loadCourse(c.courseName);
-            collapseCoursePanel();
-          };
-          tbody.appendChild(row);
-        });
-      }
-
-      document.getElementById('sortCourse').onclick = () => {
-        toggleSort('courseName');
-        renderList(input.value);
-      };
-      document.getElementById('sortClub').onclick = () => {
-        toggleSort('clubName');
-        renderList(input.value);
-      };
-
-      function toggleSort(column) {
-        if (currentSort.column === column) {
-          currentSort.asc = !currentSort.asc;
-        } else {
-          currentSort.column = column;
-          currentSort.asc = true;
-        }
-
-        courseInfo.sort((a, b) =>
-          a[column].localeCompare(b[column], 'is', { sensitivity: 'base' }) * (currentSort.asc ? 1 : -1)
-        );
-      }
-
-      input.addEventListener('input', () => {
-        expandCoursePanel();
-        renderList(input.value);
-      });
-      input.addEventListener('focus', () => input.select());
-      renderList();
-    }
-
-    function loadCourse(courseName) {
-      for (const layerMap of Object.values(courseLayers)) {
-        for (const group of Object.values(layerMap)) leafletMap.removeLayer(group);
-      }
-      courseLayers[courseName] = {};
-      courseAreas[courseName] = {};
-
-      fetch(`courses/${courseName}.geojson`)
-        .then(res => res.json())
-        .then(data => {
-          const bounds = L.latLngBounds();
-
-          data.features.forEach(feature => {
-            const layerName = feature.properties.layer || 'unknown';
-            const area = parseFloat(feature.properties.AreaSqMeters || 0);
-
-            if (!courseLayers[courseName][layerName]) {
-              courseLayers[courseName][layerName] = L.layerGroup();
-              courseAreas[courseName][layerName] = 0;
-            }
-            courseAreas[courseName][layerName] += area;
-
-            const sublayer = L.geoJSON(feature);
-            sublayer.addTo(courseLayers[courseName][layerName]);
-          });
-
-          updateCourseView(courseName);
-        });
-    }
-
-    function updateCourseView(courseKey) {
-      const toggles = document.getElementById('layerToggles');
-      const areas = document.getElementById('layerAreas');
-      toggles.innerHTML = '';
-      areas.innerHTML = '';
-
-      let bounds = L.latLngBounds();
-      for (const [layerName, group] of Object.entries(courseLayers[courseKey])) {
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.checked = true;
-        checkbox.className = 'form-check-input me-1';
-        checkbox.onchange = () => {
-          if (checkbox.checked) group.addTo(leafletMap);
-          else leafletMap.removeLayer(group);
-          leafletMap.invalidateSize();
-        };
-
-        const label = document.createElement('label');
-        label.className = 'form-check-label';
-        label.textContent = layerName;
-
-        const div = document.createElement('div');
-        div.className = 'form-check';
-        div.append(checkbox, label);
-        toggles.appendChild(div);
-
-        group.addTo(leafletMap);
-        group.eachLayer(l => { if (l.getBounds) bounds.extend(l.getBounds()); });
-
-        const areaEntry = document.createElement('div');
-        areaEntry.textContent = `${layerName}: ${courseAreas[courseKey][layerName].toLocaleString(undefined, { maximumFractionDigits: 1 })} m²`;
-        areas.appendChild(areaEntry);
-      }
-
-      if (bounds.isValid()) leafletMap.fitBounds(bounds);
-    }
-
-    function toggleCoursePanel() {
-      const panel = document.getElementById('coursePanel');
-      const icon = document.getElementById('toggleBtn').querySelector('i');
-      isExpanded = !isExpanded;
-      panel.classList.toggle('expanded', isExpanded);
-      panel.classList.toggle('collapsed', !isExpanded);
-      icon.className = isExpanded ? 'bi bi-chevron-up' : 'bi bi-chevron-down';
-    }
-
-    function collapseCoursePanel() {
-      const panel = document.getElementById('coursePanel');
-      const icon = document.getElementById('toggleBtn').querySelector('i');
-      panel.classList.remove('expanded');
-      panel.classList.add('collapsed');
-      icon.className = 'bi bi-chevron-down';
-      isExpanded = false;
-    }
-
-    function expandCoursePanel() {
-      const panel = document.getElementById('coursePanel');
-      const icon = document.getElementById('toggleBtn').querySelector('i');
-      panel.classList.add('expanded');
-      panel.classList.remove('collapsed');
-      icon.className = 'bi bi-chevron-up';
-      isExpanded = true;
-    }
-  </script>
+  <script src="map.js"></script>
 </body>
 </html>
