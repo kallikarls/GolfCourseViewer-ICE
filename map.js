@@ -89,10 +89,16 @@ function loadCourseGeoJson(courseName) {
       currentLayer = L.geoJSON(data, {
         onEachFeature: (feature, layer) => {
           if (feature.properties) {
-            const info = Object.entries(feature.properties)
-              .map(([key, value]) => `<strong>${key}:</strong> ${value}`)
-              .join("<br>");
-            layer.bindPopup(info);
+            const props = feature.properties;
+            const info = `
+            <strong>Layer:</strong> ${props.layer || "N/A"}<br>
+            <strong>Course:</strong> ${props.courseName || "N/A"}<br>
+            <strong>Club:</strong> ${props.clubName || "N/A"}<br>
+            <strong>Latitude:</strong> ${props.Latitude || "N/A"}<br>
+            <strong>Longitude:</strong> ${props.Longitude || "N/A"}<br>
+            <strong>AreaSqMeters:</strong> ${props.AreaSqMeters || "N/A"}
+            `;
+    layer.bindPopup(info);
           }
         },
       }).addTo(map);
