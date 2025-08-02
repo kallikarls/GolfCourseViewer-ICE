@@ -1,63 +1,91 @@
-  
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+html, body, #map {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
+
 #map {
-    height: 100vh;
-    width: 100%;
+  z-index: 0;
 }
+
 .course-panel {
-    position: absolute;
-    top: 1rem;
-    left: 4rem;
-    width: 460px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-    z-index: 1000;
-    transition: max-height 0.3s ease;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+  position: absolute;
+  top: 1rem;
+  left: 4rem;
+  max-width: 95vw;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  padding: 0.5rem;
+  transition: max-height 0.3s ease;
+  overflow: hidden;
 }
-.course-panel.collapsed {
-    max-height: 70px;
+
+.course-panel.collapsed .table-responsive {
+  display: none;
 }
-.course-panel.expanded {
-    max-height: 500px;
+
+.course-panel input.form-control {
+  min-width: 250px;
 }
-.course-panel .input-group {
-    position: sticky;
-    top: 0;
-    background: white;
-    padding: 1rem;
-    z-index: 10;
+
+#toggleBtn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
-.course-panel table {
-    margin: 0 1rem;
-    width: calc(100% - 2rem);
-}
+
 .table-responsive {
-    flex: 1;
-    overflow-y: auto;
-    padding-bottom: 1rem;
+  max-height: 300px;
+  overflow-y: auto;
+  margin-top: 0.5rem;
 }
+
+#toggleLayersBtn {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 1001;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
 .side-panel {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    width: 360px;
-    max-height: calc(100vh - 2rem);
-    overflow-y: auto;
-    background: #fff;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-    z-index: 1000;
+  position: absolute;
+  bottom: 4rem;
+  right: 1rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  max-height: 60vh;
+  overflow-y: auto;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  z-index: 1000;
 }
-.side-panel > div {
-    margin-bottom: 2rem;
+
+.side-panel.collapsed {
+  display: none;
 }
-  
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .course-panel {
+    left: 2rem;
+    right: 2rem;
+    width: auto;
+  }
+
+  #toggleLayersBtn {
+    right: 0.5rem;
+    bottom: 0.5rem;
+  }
+
+  .side-panel {
+    bottom: 3rem;
+    right: 0.5rem;
+    max-height: 50vh;
+  }
+}

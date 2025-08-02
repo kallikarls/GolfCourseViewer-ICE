@@ -33,7 +33,9 @@
     </div>
   </div>
 
-  <div class="side-panel">
+  <button id="toggleLayersBtn" onclick="toggleLayerPanel()">Layers</button>
+
+  <div class="side-panel" id="sidePanel">
     <div>
       <strong>Toggle Layers</strong>
       <div id="layerToggles"></div>
@@ -46,5 +48,18 @@
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="map.js"></script>
+  <script>
+    function toggleLayerPanel() {
+      const panel = document.getElementById('sidePanel');
+      panel.classList.toggle('collapsed');
+    }
+
+    // Always show side panel on desktop
+    window.addEventListener('load', () => {
+      if (window.innerWidth >= 768) {
+        document.getElementById('sidePanel').classList.remove('collapsed');
+      }
+    });
+  </script>
 </body>
 </html>
