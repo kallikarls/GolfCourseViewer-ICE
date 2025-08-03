@@ -96,7 +96,9 @@ function loadCourseGeoJson(courseName) {
             <strong>Club:</strong> ${props.clubName || "N/A"}<br>
             <strong>Latitude:</strong> ${props.Latitude || "N/A"}<br>
             <strong>Longitude:</strong> ${props.Longitude || "N/A"}<br>
-            <strong>AreaSqMeters:</strong> ${props.AreaSqMeters || "N/A"}
+            <strong>AreaSqMeters:</strong> ${props.AreaSqMeters || "N/A"}<br>
+            <strong>Altitude (m):</strong> ${props.AltitudeM || "N/A"}<br>
+            <strong>Altitude (ft):</strong> ${props.AltitudeFt || "N/A"}
             `;
     layer.bindPopup(info);
           }

@@ -627,8 +627,8 @@
         "Latitude": 64.1849687168973,
         "Longitude": -21.607549909880213,
         "AreaSqMeters": 48364.74,
-        "AltitudeM": 51.08,
-        "AltitudeFt": 167.59
+        "AltitudeM": 51,
+        "AltitudeFt": 168
       }
     },
     {
@@ -1673,8 +1673,8 @@
         "Latitude": 64.18585415967082,
         "Longitude": -21.601564956187975,
         "AreaSqMeters": 128277.89,
-        "AltitudeM": 53.52,
-        "AltitudeFt": 175.59
+        "AltitudeM": 54,
+        "AltitudeFt": 176
       }
     },
     {
@@ -1714,8 +1714,8 @@
         "Latitude": 64.18549691974259,
         "Longitude": -21.597652522957095,
         "AreaSqMeters": 65.53,
-        "AltitudeM": 53.05,
-        "AltitudeFt": 174.05
+        "AltitudeM": 53,
+        "AltitudeFt": 174
       }
     },
     {
@@ -1771,8 +1771,8 @@
         "Latitude": 64.18482712695646,
         "Longitude": -21.599453483471464,
         "AreaSqMeters": 142.56,
-        "AltitudeM": 53.99,
-        "AltitudeFt": 177.13
+        "AltitudeM": 54,
+        "AltitudeFt": 177
       }
     },
     {
@@ -2084,8 +2084,8 @@
         "Latitude": 64.18441709919416,
         "Longitude": -21.601456632752747,
         "AreaSqMeters": 66.96,
-        "AltitudeM": 48.01,
-        "AltitudeFt": 157.51
+        "AltitudeM": 48,
+        "AltitudeFt": 158
       }
     },
     {
@@ -2397,8 +2397,8 @@
         "Latitude": 64.18474268828354,
         "Longitude": -21.608655428158613,
         "AreaSqMeters": 301.43,
-        "AltitudeM": 49.39,
-        "AltitudeFt": 162.04
+        "AltitudeM": 49,
+        "AltitudeFt": 162
       }
     },
     {
@@ -2454,8 +2454,8 @@
         "Latitude": 64.18561301065074,
         "Longitude": -21.599683450925653,
         "AreaSqMeters": 127.43,
-        "AltitudeM": 54.26,
-        "AltitudeFt": 178.02
+        "AltitudeM": 54,
+        "AltitudeFt": 178
       }
     },
     {
@@ -2511,8 +2511,8 @@
         "Latitude": 64.18636531935125,
         "Longitude": -21.597919160910493,
         "AreaSqMeters": 259.48,
-        "AltitudeM": 56.34,
-        "AltitudeFt": 184.84
+        "AltitudeM": 56,
+        "AltitudeFt": 185
       }
     },
     {
@@ -3358,8 +3358,8 @@
         "Latitude": 64.18511155821768,
         "Longitude": -21.59905638883875,
         "AreaSqMeters": 594.62,
-        "AltitudeM": 50.23,
-        "AltitudeFt": 164.8
+        "AltitudeM": 50,
+        "AltitudeFt": 165
       }
     },
     {
@@ -3675,8 +3675,8 @@
         "Latitude": 64.18615047941921,
         "Longitude": -21.599028075001243,
         "AreaSqMeters": 292.85,
-        "AltitudeM": 55.15,
-        "AltitudeFt": 180.94
+        "AltitudeM": 55,
+        "AltitudeFt": 181
       }
     },
     {
@@ -4154,8 +4154,8 @@
         "Latitude": 64.18320634903988,
         "Longitude": -21.60698872921296,
         "AreaSqMeters": 237.86,
-        "AltitudeM": 47.09,
-        "AltitudeFt": 154.49
+        "AltitudeM": 47,
+        "AltitudeFt": 154
       }
     },
     {
@@ -4427,8 +4427,8 @@
         "Latitude": 64.18399080542152,
         "Longitude": -21.607036243880117,
         "AreaSqMeters": 2182.72,
-        "AltitudeM": 47.31,
-        "AltitudeFt": 155.22
+        "AltitudeM": 47,
+        "AltitudeFt": 155
       }
     },
     {
@@ -4774,8 +4774,8 @@
         "Latitude": 64.18447158835886,
         "Longitude": -21.600333590758652,
         "AreaSqMeters": 176.39,
-        "AltitudeM": 48.4,
-        "AltitudeFt": 158.79
+        "AltitudeM": 48,
+        "AltitudeFt": 159
       }
     },
     {
@@ -4979,8 +4979,8 @@
         "Latitude": 64.18435138105141,
         "Longitude": -21.608469304509335,
         "AreaSqMeters": 1845.22,
-        "AltitudeM": 46.96,
-        "AltitudeFt": 154.07
+        "AltitudeM": 47,
+        "AltitudeFt": 154
       }
     },
     {
@@ -5334,8 +5334,8 @@
         "Latitude": 64.1848925035994,
         "Longitude": -21.602594695052755,
         "AreaSqMeters": 116.0,
-        "AltitudeM": 50.67,
-        "AltitudeFt": 166.24
+        "AltitudeM": 51,
+        "AltitudeFt": 166
       }
     },
     {
@@ -5685,8 +5685,8 @@
         "Latitude": 64.18492675152187,
         "Longitude": -21.60194613231129,
         "AreaSqMeters": 126.26,
-        "AltitudeM": 51.43,
-        "AltitudeFt": 168.73
+        "AltitudeM": 51,
+        "AltitudeFt": 169
       }
     },
     {
@@ -6044,8 +6044,8 @@
         "Latitude": 64.18499011998709,
         "Longitude": -21.605854850331315,
         "AreaSqMeters": 336.88,
-        "AltitudeM": 51.22,
-        "AltitudeFt": 168.04
+        "AltitudeM": 51,
+        "AltitudeFt": 168
       }
     },
     {
@@ -6325,8 +6325,8 @@
         "Latitude": 64.18512280056926,
         "Longitude": -21.603547159419385,
         "AreaSqMeters": 1573.84,
-        "AltitudeM": 50.2,
-        "AltitudeFt": 164.7
+        "AltitudeM": 50,
+        "AltitudeFt": 165
       }
     },
     {
@@ -6712,8 +6712,8 @@
         "Latitude": 64.18511559078566,
         "Longitude": -21.608299701576005,
         "AreaSqMeters": 142.3,
-        "AltitudeM": 51.82,
-        "AltitudeFt": 170.01
+        "AltitudeM": 52,
+        "AltitudeFt": 170
       }
     },
     {
@@ -6989,8 +6989,8 @@
         "Latitude": 64.18567382770641,
         "Longitude": -21.598710424445425,
         "AreaSqMeters": 931.18,
-        "AltitudeM": 54.36,
-        "AltitudeFt": 178.35
+        "AltitudeM": 54,
+        "AltitudeFt": 178
       }
     },
     {
@@ -7254,8 +7254,8 @@
         "Latitude": 64.18525829999557,
         "Longitude": -21.607090899728025,
         "AreaSqMeters": 2723.54,
-        "AltitudeM": 52.3,
-        "AltitudeFt": 171.59
+        "AltitudeM": 52,
+        "AltitudeFt": 172
       }
     },
     {
@@ -7499,8 +7499,8 @@
         "Latitude": 64.186046405085,
         "Longitude": -21.597746645191258,
         "AreaSqMeters": 468.85,
-        "AltitudeM": 55.15,
-        "AltitudeFt": 180.94
+        "AltitudeM": 55,
+        "AltitudeFt": 181
       }
     },
     {
@@ -7800,8 +7800,8 @@
         "Latitude": 64.18578304317872,
         "Longitude": -21.605260936995272,
         "AreaSqMeters": 2653.94,
-        "AltitudeM": 54.39,
-        "AltitudeFt": 178.44
+        "AltitudeM": 54,
+        "AltitudeFt": 178
       }
     },
     {
@@ -8133,8 +8133,8 @@
         "Latitude": 64.18617776207253,
         "Longitude": -21.59692905977592,
         "AreaSqMeters": 735.18,
-        "AltitudeM": 55.27,
-        "AltitudeFt": 181.33
+        "AltitudeM": 55,
+        "AltitudeFt": 181
       }
     },
     {
@@ -8398,8 +8398,8 @@
         "Latitude": 64.18586233330436,
         "Longitude": -21.60240946711887,
         "AreaSqMeters": 2526.85,
-        "AltitudeM": 53.93,
-        "AltitudeFt": 176.94
+        "AltitudeM": 54,
+        "AltitudeFt": 177
       }
     },
     {
@@ -8651,8 +8651,8 @@
         "Latitude": 64.18624954163249,
         "Longitude": -21.60175272121549,
         "AreaSqMeters": 2358.16,
-        "AltitudeM": 54.34,
-        "AltitudeFt": 178.28
+        "AltitudeM": 54,
+        "AltitudeFt": 178
       }
     },
     {
@@ -9034,8 +9034,8 @@
         "Latitude": 64.18637428755251,
         "Longitude": -21.607549609965318,
         "AreaSqMeters": 223.72,
-        "AltitudeM": 57.38,
-        "AltitudeFt": 188.25
+        "AltitudeM": 57,
+        "AltitudeFt": 188
       }
     },
     {
@@ -9351,8 +9351,8 @@
         "Latitude": 64.18625197267767,
         "Longitude": -21.603909795248384,
         "AreaSqMeters": 3537.37,
-        "AltitudeM": 56.34,
-        "AltitudeFt": 184.84
+        "AltitudeM": 56,
+        "AltitudeFt": 185
       }
     },
     {
@@ -9568,8 +9568,8 @@
         "Latitude": 64.18687552257511,
         "Longitude": -21.596579420521103,
         "AreaSqMeters": 482.77,
-        "AltitudeM": 56.29,
-        "AltitudeFt": 184.68
+        "AltitudeM": 56,
+        "AltitudeFt": 185
       }
     },
     {
@@ -9927,8 +9927,8 @@
         "Latitude": 64.18696864888807,
         "Longitude": -21.604278750424523,
         "AreaSqMeters": 236.77,
-        "AltitudeM": 60.62,
-        "AltitudeFt": 198.88
+        "AltitudeM": 61,
+        "AltitudeFt": 199
       }
     },
     {
@@ -10274,8 +10274,8 @@
         "Latitude": 64.18703175798153,
         "Longitude": -21.602134364783304,
         "AreaSqMeters": 423.26,
-        "AltitudeM": 64.63,
-        "AltitudeFt": 212.04
+        "AltitudeM": 65,
+        "AltitudeFt": 212
       }
     },
     {
@@ -10741,8 +10741,8 @@
         "Latitude": 64.18764098303227,
         "Longitude": -21.597092416906435,
         "AreaSqMeters": 680.7,
-        "AltitudeM": 66.26,
-        "AltitudeFt": 217.39
+        "AltitudeM": 66,
+        "AltitudeFt": 217
       }
     },
     {
@@ -10994,8 +10994,8 @@
         "Latitude": 64.1868081801256,
         "Longitude": -21.59799170784909,
         "AreaSqMeters": 614.76,
-        "AltitudeM": 57.16,
-        "AltitudeFt": 187.53
+        "AltitudeM": 57,
+        "AltitudeFt": 188
       }
     },
     {
@@ -11183,8 +11183,8 @@
         "Latitude": 64.18502514474476,
         "Longitude": -21.59912619553764,
         "AreaSqMeters": 220.78,
-        "AltitudeM": 50.27,
-        "AltitudeFt": 164.93
+        "AltitudeM": 50,
+        "AltitudeFt": 165
       }
     },
     {
@@ -11364,8 +11364,8 @@
         "Latitude": 64.185290058519,
         "Longitude": -21.59890383088141,
         "AreaSqMeters": 68.35,
-        "AltitudeM": 50.93,
-        "AltitudeFt": 167.09
+        "AltitudeM": 51,
+        "AltitudeFt": 167
       }
     },
     {
@@ -11549,8 +11549,8 @@
         "Latitude": 64.1865929471188,
         "Longitude": -21.59643322420376,
         "AreaSqMeters": 98.14,
-        "AltitudeM": 55.62,
-        "AltitudeFt": 182.48
+        "AltitudeM": 56,
+        "AltitudeFt": 182
       }
     },
     {
@@ -11778,8 +11778,8 @@
         "Latitude": 64.18317514657384,
         "Longitude": -21.606956577112097,
         "AreaSqMeters": 312.24,
-        "AltitudeM": 47.31,
-        "AltitudeFt": 155.22
+        "AltitudeM": 47,
+        "AltitudeFt": 155
       }
     },
     {
@@ -11959,8 +11959,8 @@
         "Latitude": 64.18446055316473,
         "Longitude": -21.60030447093666,
         "AreaSqMeters": 198.44,
-        "AltitudeM": 48.43,
-        "AltitudeFt": 158.89
+        "AltitudeM": 48,
+        "AltitudeFt": 159
       }
     },
     {
@@ -12148,8 +12148,8 @@
         "Latitude": 64.18489410147373,
         "Longitude": -21.60260222562247,
         "AreaSqMeters": 149.27,
-        "AltitudeM": 50.67,
-        "AltitudeFt": 166.24
+        "AltitudeM": 51,
+        "AltitudeFt": 166
       }
     },
     {
@@ -12333,8 +12333,8 @@
         "Latitude": 64.18493438825146,
         "Longitude": -21.60194147569509,
         "AreaSqMeters": 162.9,
-        "AltitudeM": 51.43,
-        "AltitudeFt": 168.73
+        "AltitudeM": 51,
+        "AltitudeFt": 169
       }
     },
     {
@@ -12518,8 +12518,8 @@
         "Latitude": 64.18491922685266,
         "Longitude": -21.605892618596748,
         "AreaSqMeters": 310.65,
-        "AltitudeM": 51.04,
-        "AltitudeFt": 167.45
+        "AltitudeM": 51,
+        "AltitudeFt": 167
       }
     },
     {
@@ -12719,8 +12719,8 @@
         "Latitude": 64.18511760543413,
         "Longitude": -21.608294964492398,
         "AreaSqMeters": 294.45,
-        "AltitudeM": 51.82,
-        "AltitudeFt": 170.01
+        "AltitudeM": 52,
+        "AltitudeFt": 170
       }
     },
     {
@@ -12896,8 +12896,8 @@
         "Latitude": 64.18641861426853,
         "Longitude": -21.6075084011333,
         "AreaSqMeters": 381.8,
-        "AltitudeM": 57.78,
-        "AltitudeFt": 189.57
+        "AltitudeM": 58,
+        "AltitudeFt": 190
       }
     },
     {
@@ -13081,8 +13081,8 @@
         "Latitude": 64.18697729548417,
         "Longitude": -21.60426684825719,
         "AreaSqMeters": 289.69,
-        "AltitudeM": 60.62,
-        "AltitudeFt": 198.88
+        "AltitudeM": 61,
+        "AltitudeFt": 199
       }
     },
     {
@@ -13262,8 +13262,8 @@
         "Latitude": 64.18709583531549,
         "Longitude": -21.602193355716253,
         "AreaSqMeters": 143.57,
-        "AltitudeM": 65.62,
-        "AltitudeFt": 215.29
+        "AltitudeM": 66,
+        "AltitudeFt": 215
       }
     },
     {
@@ -13435,8 +13435,8 @@
         "Latitude": 64.18767918528607,
         "Longitude": -21.597104986003572,
         "AreaSqMeters": 186.93,
-        "AltitudeM": 66.73,
-        "AltitudeFt": 218.93
+        "AltitudeM": 67,
+        "AltitudeFt": 219
       }
     },
     {
@@ -13644,8 +13644,8 @@
         "Latitude": 64.18456414129365,
         "Longitude": -21.599958279576608,
         "AreaSqMeters": 71.14,
-        "AltitudeM": 48.46,
-        "AltitudeFt": 158.99
+        "AltitudeM": 48,
+        "AltitudeFt": 159
       }
     },
     {
@@ -14557,8 +14557,8 @@
         "Latitude": 64.18445226513502,
         "Longitude": -21.60049376955463,
         "AreaSqMeters": 928.36,
-        "AltitudeM": 48.45,
-        "AltitudeFt": 158.96
+        "AltitudeM": 48,
+        "AltitudeFt": 159
       }
     },
     {
@@ -14898,8 +14898,8 @@
         "Latitude": 64.1847009746266,
         "Longitude": -21.599934099909216,
         "AreaSqMeters": 90.47,
-        "AltitudeM": 49.34,
-        "AltitudeFt": 161.88
+        "AltitudeM": 49,
+        "AltitudeFt": 162
       }
     },
     {
@@ -15115,8 +15115,8 @@
         "Latitude": 64.18469408194889,
         "Longitude": -21.600261704360033,
         "AreaSqMeters": 112.97,
-        "AltitudeM": 48.18,
-        "AltitudeFt": 158.07
+        "AltitudeM": 48,
+        "AltitudeFt": 158
       }
     },
     {
@@ -15518,8 +15518,8 @@
         "Latitude": 64.18612958030026,
         "Longitude": -21.60668691220575,
         "AreaSqMeters": 48.38,
-        "AltitudeM": 56.46,
-        "AltitudeFt": 185.24
+        "AltitudeM": 56,
+        "AltitudeFt": 185
       }
     },
     {
@@ -22487,8 +22487,8 @@
         "Latitude": 64.18482133092574,
         "Longitude": -21.607546171451354,
         "AreaSqMeters": 20190.43,
-        "AltitudeM": 51.15,
-        "AltitudeFt": 167.81
+        "AltitudeM": 51,
+        "AltitudeFt": 168
       }
     },
     {
@@ -22576,8 +22576,8 @@
         "Latitude": 64.18665498320792,
         "Longitude": -21.602963523553285,
         "AreaSqMeters": 55.17,
-        "AltitudeM": 57.86,
-        "AltitudeFt": 189.83
+        "AltitudeM": 58,
+        "AltitudeFt": 190
       }
     },
     {
@@ -22881,8 +22881,8 @@
         "Latitude": 64.18664416634032,
         "Longitude": -21.607640489028455,
         "AreaSqMeters": 123.91,
-        "AltitudeM": 58.63,
-        "AltitudeFt": 192.36
+        "AltitudeM": 59,
+        "AltitudeFt": 192
       }
     },
     {
@@ -35858,8 +35858,8 @@
         "Latitude": 64.18580050954797,
         "Longitude": -21.60252558219307,
         "AreaSqMeters": 39316.51,
-        "AltitudeM": 53.83,
-        "AltitudeFt": 176.61
+        "AltitudeM": 54,
+        "AltitudeFt": 177
       }
     },
     {
@@ -40565,8 +40565,8 @@
         "Latitude": 64.18565684958364,
         "Longitude": -21.60735782345851,
         "AreaSqMeters": 11380.53,
-        "AltitudeM": 54.34,
-        "AltitudeFt": 178.28
+        "AltitudeM": 54,
+        "AltitudeFt": 178
       }
     },
     {
@@ -52840,8 +52840,8 @@
         "Latitude": 64.18595672701233,
         "Longitude": -21.60070621133444,
         "AreaSqMeters": 55607.98,
-        "AltitudeM": 53.61,
-        "AltitudeFt": 175.89
+        "AltitudeM": 54,
+        "AltitudeFt": 176
       }
     },
     {
@@ -52977,8 +52977,8 @@
         "Latitude": 64.18326903332985,
         "Longitude": -21.607531566199935,
         "AreaSqMeters": 55.6,
-        "AltitudeM": 47.56,
-        "AltitudeFt": 156.04
+        "AltitudeM": 48,
+        "AltitudeFt": 156
       }
     },
     {
@@ -53422,8 +53422,8 @@
         "Latitude": 64.18364865879022,
         "Longitude": -21.607558539304662,
         "AreaSqMeters": 1627.74,
-        "AltitudeM": 48.05,
-        "AltitudeFt": 157.64
+        "AltitudeM": 48,
+        "AltitudeFt": 158
       }
     },
     {
@@ -53695,8 +53695,8 @@
         "Latitude": 64.1838724836424,
         "Longitude": -21.606666317747802,
         "AreaSqMeters": 700.7,
-        "AltitudeM": 47.43,
-        "AltitudeFt": 155.61
+        "AltitudeM": 47,
+        "AltitudeFt": 156
       }
     },
     {
@@ -53972,8 +53972,8 @@
         "Latitude": 64.18600992810131,
         "Longitude": -21.603997788475617,
         "AreaSqMeters": 163.16,
-        "AltitudeM": 55.64,
-        "AltitudeFt": 182.55
+        "AltitudeM": 56,
+        "AltitudeFt": 183
       }
     },
     {
@@ -54301,8 +54301,8 @@
         "Latitude": 64.18562231577118,
         "Longitude": -21.60426139016689,
         "AreaSqMeters": 3968.07,
-        "AltitudeM": 54.05,
-        "AltitudeFt": 177.33
+        "AltitudeM": 54,
+        "AltitudeFt": 177
       }
     },
     {
@@ -54718,8 +54718,8 @@
         "Latitude": 64.1840360262292,
         "Longitude": -21.608785246671445,
         "AreaSqMeters": 2338.88,
-        "AltitudeM": 46.7,
-        "AltitudeFt": 153.22
+        "AltitudeM": 47,
+        "AltitudeFt": 153
       }
     },
     {
@@ -54811,8 +54811,8 @@
         "Latitude": 64.18336525046911,
         "Longitude": -21.608434841378788,
         "AreaSqMeters": 18.06,
-        "AltitudeM": 46.84,
-        "AltitudeFt": 153.67
+        "AltitudeM": 47,
+        "AltitudeFt": 154
       }
     },
     {
@@ -54884,8 +54884,8 @@
         "Latitude": 64.18484827159764,
         "Longitude": -21.608623931955776,
         "AreaSqMeters": 16.38,
-        "AltitudeM": 49.89,
-        "AltitudeFt": 163.68
+        "AltitudeM": 50,
+        "AltitudeFt": 164
       }
     },
     {
@@ -55309,8 +55309,8 @@
         "Latitude": 64.18533657870827,
         "Longitude": -21.601425828114643,
         "AreaSqMeters": 86.26,
-        "AltitudeM": 51.9,
-        "AltitudeFt": 170.28
+        "AltitudeM": 52,
+        "AltitudeFt": 170
       }
     },
     {
@@ -58212,8 +58212,8 @@
         "Latitude": 64.18487202869534,
         "Longitude": -21.59927310297113,
         "AreaSqMeters": 3549.69,
-        "AltitudeM": 52.48,
-        "AltitudeFt": 172.18
+        "AltitudeM": 52,
+        "AltitudeFt": 172
       }
     },
     {
@@ -58301,8 +58301,8 @@
         "Latitude": 64.18573692743973,
         "Longitude": -21.599935233399243,
         "AreaSqMeters": 69.69,
-        "AltitudeM": 54.22,
-        "AltitudeFt": 177.89
+        "AltitudeM": 54,
+        "AltitudeFt": 178
       }
     },
     {
@@ -58454,8 +58454,8 @@
         "Latitude": 64.18651982244305,
         "Longitude": -21.606045441501763,
         "AreaSqMeters": 32.08,
-        "AltitudeM": 58.7,
-        "AltitudeFt": 192.59
+        "AltitudeM": 59,
+        "AltitudeFt": 193
       }
     },
     {
@@ -58643,8 +58643,8 @@
         "Latitude": 64.18637951429452,
         "Longitude": -21.60806897827237,
         "AreaSqMeters": 318.15,
-        "AltitudeM": 57.1,
-        "AltitudeFt": 187.34
+        "AltitudeM": 57,
+        "AltitudeFt": 187
       }
     },
     {
@@ -60308,8 +60308,8 @@
         "Latitude": 64.18642756441407,
         "Longitude": -21.607489397464576,
         "AreaSqMeters": 592.53,
-        "AltitudeM": 57.93,
-        "AltitudeFt": 190.06
+        "AltitudeM": 58,
+        "AltitudeFt": 190
       }
     },
     {
@@ -61089,8 +61089,8 @@
         "Latitude": 64.18703020513303,
         "Longitude": -21.604029235766397,
         "AreaSqMeters": 683.27,
-        "AltitudeM": 61.39,
-        "AltitudeFt": 201.41
+        "AltitudeM": 61,
+        "AltitudeFt": 201
       }
     },
     {
@@ -61310,8 +61310,8 @@
         "Latitude": 64.18501083343021,
         "Longitude": -21.60256298971093,
         "AreaSqMeters": 18.53,
-        "AltitudeM": 51.02,
-        "AltitudeFt": 167.39
+        "AltitudeM": 51,
+        "AltitudeFt": 167
       }
     },
     {
@@ -61535,8 +61535,8 @@
         "Latitude": 64.1851749081435,
         "Longitude": -21.60228692633974,
         "AreaSqMeters": 34.32,
-        "AltitudeM": 51.26,
-        "AltitudeFt": 168.18
+        "AltitudeM": 51,
+        "AltitudeFt": 168
       }
     },
     {
@@ -61576,8 +61576,8 @@
         "Latitude": 64.18571955437943,
         "Longitude": -21.60106674704006,
         "AreaSqMeters": 10.21,
-        "AltitudeM": 53.02,
-        "AltitudeFt": 173.95
+        "AltitudeM": 53,
+        "AltitudeFt": 174
       }
     },
     {
@@ -61877,8 +61877,8 @@
         "Latitude": 64.18610076053082,
         "Longitude": -21.59915246457208,
         "AreaSqMeters": 46.26,
-        "AltitudeM": 55.0,
-        "AltitudeFt": 180.45
+        "AltitudeM": 55,
+        "AltitudeFt": 180
       }
     },
     {
@@ -62198,8 +62198,8 @@
         "Latitude": 64.18759781610515,
         "Longitude": -21.597281738674305,
         "AreaSqMeters": 21.85,
-        "AltitudeM": 65.63,
-        "AltitudeFt": 215.32
+        "AltitudeM": 66,
+        "AltitudeFt": 215
       }
     },
     {
@@ -62379,8 +62379,8 @@
         "Latitude": 64.18320287283944,
         "Longitude": -21.60667415530464,
         "AreaSqMeters": 23.28,
-        "AltitudeM": 47.41,
-        "AltitudeFt": 155.54
+        "AltitudeM": 47,
+        "AltitudeFt": 156
       }
     },
     {
@@ -62616,8 +62616,8 @@
         "Latitude": 64.18332735562002,
         "Longitude": -21.606796740436593,
         "AreaSqMeters": 24.26,
-        "AltitudeM": 46.69,
-        "AltitudeFt": 153.18
+        "AltitudeM": 47,
+        "AltitudeFt": 153
       }
     },
     {
@@ -62793,8 +62793,8 @@
         "Latitude": 64.18332320691783,
         "Longitude": -21.607033309399675,
         "AreaSqMeters": 16.12,
-        "AltitudeM": 46.57,
-        "AltitudeFt": 152.79
+        "AltitudeM": 47,
+        "AltitudeFt": 153
       }
     },
     {
@@ -62986,8 +62986,8 @@
         "Latitude": 64.18471457438352,
         "Longitude": -21.6083028287024,
         "AreaSqMeters": 24.93,
-        "AltitudeM": 48.96,
-        "AltitudeFt": 160.63
+        "AltitudeM": 49,
+        "AltitudeFt": 161
       }
     },
     {
@@ -63191,8 +63191,8 @@
         "Latitude": 64.18477170153048,
         "Longitude": -21.606715017421667,
         "AreaSqMeters": 34.17,
-        "AltitudeM": 50.18,
-        "AltitudeFt": 164.63
+        "AltitudeM": 50,
+        "AltitudeFt": 165
       }
     },
     {
@@ -63484,8 +63484,8 @@
         "Latitude": 64.18487973911293,
         "Longitude": -21.602897200954114,
         "AreaSqMeters": 82.46,
-        "AltitudeM": 50.45,
-        "AltitudeFt": 165.52
+        "AltitudeM": 50,
+        "AltitudeFt": 166
       }
     },
     {
@@ -63669,8 +63669,8 @@
         "Latitude": 64.18496013978695,
         "Longitude": -21.60165148993403,
         "AreaSqMeters": 17.26,
-        "AltitudeM": 51.66,
-        "AltitudeFt": 169.49
+        "AltitudeM": 52,
+        "AltitudeFt": 169
       }
     },
     {
@@ -63862,8 +63862,8 @@
         "Latitude": 64.18505090182488,
         "Longitude": -21.602108172327227,
         "AreaSqMeters": 31.2,
-        "AltitudeM": 51.2,
-        "AltitudeFt": 167.98
+        "AltitudeM": 51,
+        "AltitudeFt": 168
       }
     },
     {
@@ -64219,8 +64219,8 @@
         "Latitude": 64.18521983452823,
         "Longitude": -21.605434180992486,
         "AreaSqMeters": 76.73,
-        "AltitudeM": 51.19,
-        "AltitudeFt": 167.95
+        "AltitudeM": 51,
+        "AltitudeFt": 168
       }
     },
     {
@@ -64460,8 +64460,8 @@
         "Latitude": 64.18630648267028,
         "Longitude": -21.596728383974416,
         "AreaSqMeters": 28.97,
-        "AltitudeM": 55.16,
-        "AltitudeFt": 180.97
+        "AltitudeM": 55,
+        "AltitudeFt": 181
       }
     },
     {
@@ -64665,8 +64665,8 @@
         "Latitude": 64.18638210263083,
         "Longitude": -21.59699453096293,
         "AreaSqMeters": 37.06,
-        "AltitudeM": 55.38,
-        "AltitudeFt": 181.69
+        "AltitudeM": 55,
+        "AltitudeFt": 182
       }
     },
     {
@@ -64846,8 +64846,8 @@
         "Latitude": 64.18628074047243,
         "Longitude": -21.607373515038255,
         "AreaSqMeters": 21.77,
-        "AltitudeM": 57.51,
-        "AltitudeFt": 188.68
+        "AltitudeM": 58,
+        "AltitudeFt": 189
       }
     },
     {
@@ -65023,8 +65023,8 @@
         "Latitude": 64.1865364782913,
         "Longitude": -21.607356587275273,
         "AreaSqMeters": 10.85,
-        "AltitudeM": 59.19,
-        "AltitudeFt": 194.19
+        "AltitudeM": 59,
+        "AltitudeFt": 194
       }
     },
     {
@@ -65204,8 +65204,8 @@
         "Latitude": 64.18686271484188,
         "Longitude": -21.604105897436547,
         "AreaSqMeters": 33.83,
-        "AltitudeM": 59.45,
-        "AltitudeFt": 195.05
+        "AltitudeM": 59,
+        "AltitudeFt": 195
       }
     },
     {
@@ -65393,8 +65393,8 @@
         "Latitude": 64.18518546864497,
         "Longitude": -21.59909741292106,
         "AreaSqMeters": 13.43,
-        "AltitudeM": 50.55,
-        "AltitudeFt": 165.85
+        "AltitudeM": 51,
+        "AltitudeFt": 166
       }
     },
     {
@@ -65594,8 +65594,8 @@
         "Latitude": 64.18463777987105,
         "Longitude": -21.601872432334503,
         "AreaSqMeters": 175.2,
-        "AltitudeM": 51.75,
-        "AltitudeFt": 169.78
+        "AltitudeM": 52,
+        "AltitudeFt": 170
       }
     },
     {
@@ -65779,8 +65779,8 @@
         "Latitude": 64.18672816429519,
         "Longitude": -21.606567124565846,
         "AreaSqMeters": 123.12,
-        "AltitudeM": 59.77,
-        "AltitudeFt": 196.1
+        "AltitudeM": 60,
+        "AltitudeFt": 196
       }
     },
     {
@@ -65976,8 +65976,8 @@
         "Latitude": 64.1867759597777,
         "Longitude": -21.606908464037122,
         "AreaSqMeters": 102.47,
-        "AltitudeM": 60.59,
-        "AltitudeFt": 198.79
+        "AltitudeM": 61,
+        "AltitudeFt": 199
       }
     },
     {
@@ -66165,8 +66165,8 @@
         "Latitude": 64.18696073280037,
         "Longitude": -21.60294147277049,
         "AreaSqMeters": 36.76,
-        "AltitudeM": 62.72,
-        "AltitudeFt": 205.77
+        "AltitudeM": 63,
+        "AltitudeFt": 206
       }
     },
     {
@@ -66350,8 +66350,8 @@
         "Latitude": 64.18689694515264,
         "Longitude": -21.606499197111052,
         "AreaSqMeters": 158.73,
-        "AltitudeM": 60.66,
-        "AltitudeFt": 199.02
+        "AltitudeM": 61,
+        "AltitudeFt": 199
       }
     },
     {
@@ -66535,8 +66535,8 @@
         "Latitude": 64.1872351632762,
         "Longitude": -21.602947709284884,
         "AreaSqMeters": 154.49,
-        "AltitudeM": 66.37,
-        "AltitudeFt": 217.75
+        "AltitudeM": 66,
+        "AltitudeFt": 218
       }
     },
     {
@@ -66712,8 +66712,8 @@
         "Latitude": 64.1844206337649,
         "Longitude": -21.601087794135633,
         "AreaSqMeters": 47.36,
-        "AltitudeM": 48.02,
-        "AltitudeFt": 157.55
+        "AltitudeM": 48,
+        "AltitudeFt": 158
       }
     },
     {
@@ -66921,8 +66921,8 @@
         "Latitude": 64.18613430967369,
         "Longitude": -21.60668578165641,
         "AreaSqMeters": 91.72,
-        "AltitudeM": 56.46,
-        "AltitudeFt": 185.24
+        "AltitudeM": 56,
+        "AltitudeFt": 185
       }
     },
     {
@@ -67150,8 +67150,8 @@
         "Latitude": 64.18325872503665,
         "Longitude": -21.60773255482152,
         "AreaSqMeters": 234.42,
-        "AltitudeM": 47.33,
-        "AltitudeFt": 155.28
+        "AltitudeM": 47,
+        "AltitudeFt": 155
       }
     },
     {
@@ -67343,8 +67343,8 @@
         "Latitude": 64.18348156036099,
         "Longitude": -21.608120347151637,
         "AreaSqMeters": 82.56,
-        "AltitudeM": 46.97,
-        "AltitudeFt": 154.1
+        "AltitudeM": 47,
+        "AltitudeFt": 154
       }
     },
     {
@@ -67548,8 +67548,8 @@
         "Latitude": 64.1854303980165,
         "Longitude": -21.60843123624138,
         "AreaSqMeters": 205.32,
-        "AltitudeM": 53.74,
-        "AltitudeFt": 176.31
+        "AltitudeM": 54,
+        "AltitudeFt": 176
       }
     },
     {
@@ -67725,8 +67725,8 @@
         "Latitude": 64.18578010498615,
         "Longitude": -21.608396399880586,
         "AreaSqMeters": 138.78,
-        "AltitudeM": 54.53,
-        "AltitudeFt": 178.9
+        "AltitudeM": 55,
+        "AltitudeFt": 179
       }
     },
     {
@@ -67970,8 +67970,8 @@
         "Latitude": 64.18474803989001,
         "Longitude": -21.6060861543488,
         "AreaSqMeters": 87.32,
-        "AltitudeM": 50.73,
-        "AltitudeFt": 166.44
+        "AltitudeM": 51,
+        "AltitudeFt": 166
       }
     },
     {
@@ -68011,8 +68011,8 @@
         "Latitude": 64.18480413046582,
         "Longitude": -21.60549508352047,
         "AreaSqMeters": 27.61,
-        "AltitudeM": 50.17,
-        "AltitudeFt": 164.6
+        "AltitudeM": 50,
+        "AltitudeFt": 165
       }
     },
     {
@@ -68200,8 +68200,8 @@
         "Latitude": 64.1849829156338,
         "Longitude": -21.600099874548878,
         "AreaSqMeters": 41.01,
-        "AltitudeM": 53.52,
-        "AltitudeFt": 175.59
+        "AltitudeM": 54,
+        "AltitudeFt": 176
       }
     },
     {
@@ -68385,8 +68385,8 @@
         "Latitude": 64.18514306336047,
         "Longitude": -21.599609181816525,
         "AreaSqMeters": 153.03,
-        "AltitudeM": 53.73,
-        "AltitudeFt": 176.28
+        "AltitudeM": 54,
+        "AltitudeFt": 176
       }
     },
     {
@@ -68566,8 +68566,8 @@
         "Latitude": 64.1851266605887,
         "Longitude": -21.602411918834694,
         "AreaSqMeters": 66.08,
-        "AltitudeM": 51.23,
-        "AltitudeFt": 168.08
+        "AltitudeM": 51,
+        "AltitudeFt": 168
       }
     },
     {
@@ -68747,8 +68747,8 @@
         "Latitude": 64.18534262264275,
         "Longitude": -21.60280669962642,
         "AreaSqMeters": 22.24,
-        "AltitudeM": 52.0,
-        "AltitudeFt": 170.6
+        "AltitudeM": 52,
+        "AltitudeFt": 171
       }
     },
     {
@@ -68944,8 +68944,8 @@
         "Latitude": 64.18546589631327,
         "Longitude": -21.60056099330419,
         "AreaSqMeters": 55.96,
-        "AltitudeM": 53.21,
-        "AltitudeFt": 174.57
+        "AltitudeM": 53,
+        "AltitudeFt": 175
       }
     },
     {
@@ -69129,8 +69129,8 @@
         "Latitude": 64.18672034592919,
         "Longitude": -21.605875235572125,
         "AreaSqMeters": 126.16,
-        "AltitudeM": 60.07,
-        "AltitudeFt": 197.08
+        "AltitudeM": 60,
+        "AltitudeFt": 197
       }
     },
     {
@@ -69310,8 +69310,8 @@
         "Latitude": 64.18700350310749,
         "Longitude": -21.597032945567,
         "AreaSqMeters": 70.44,
-        "AltitudeM": 57.36,
-        "AltitudeFt": 188.19
+        "AltitudeM": 57,
+        "AltitudeFt": 188
       }
     },
     {
@@ -69643,8 +69643,8 @@
         "Latitude": 64.18560926747442,
         "Longitude": -21.607836063422845,
         "AreaSqMeters": 608.66,
-        "AltitudeM": 52.2,
-        "AltitudeFt": 171.26
+        "AltitudeM": 52,
+        "AltitudeFt": 171
       }
     },
     {
@@ -70348,8 +70348,8 @@
         "Latitude": 64.18450672929984,
         "Longitude": -21.600429037196527,
         "AreaSqMeters": 673.7,
-        "AltitudeM": 48.27,
-        "AltitudeFt": 158.37
+        "AltitudeM": 48,
+        "AltitudeFt": 158
       }
     },
     {
@@ -70749,8 +70749,8 @@
         "Latitude": 64.18637558445317,
         "Longitude": -21.607873945381808,
         "AreaSqMeters": 416.57,
-        "AltitudeM": 56.3,
-        "AltitudeFt": 184.71
+        "AltitudeM": 56,
+        "AltitudeFt": 185
       }
     }
   ]
